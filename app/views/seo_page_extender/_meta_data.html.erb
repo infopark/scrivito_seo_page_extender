@@ -1,0 +1,7 @@
+<%= render "seo_page_extender/meta_attribute", attribute: "meta_keywords", name: "keywords" %>
+<%= render "seo_page_extender/meta_attribute", attribute: "meta_description", name: "description" %>
+<%= render "seo_page_extender/meta_attribute", attribute: "meta_robots", name: "robots" %>
+<%= render "seo_page_extender/meta_attribute", attribute: "meta_author", name: "author" %>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="<%= 'https://#{request.raw_host_with_port + scrivito_path(@obj)}' %>" name="canonical"/>

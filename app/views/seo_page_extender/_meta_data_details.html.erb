@@ -1,0 +1,14 @@
+<h4>Keywords</h4>
+<%= scrivito_tag(:div, obj, :meta_keywords, data: {editor: 'scrivito-list-editor', delimiter: ','}) %>
+
+<h4>Description</h4>
+<%= scrivito_tag(:textarea, obj, :meta_description, data: {editor: 'scrivito-textarea-editor'}, style: 'width: 100%; height: 150px' ) %>
+
+<h4>Author</h4>
+<%= scrivito_tag(:div, obj, :meta_author) %>
+
+<h4>Indexing for search engines</h4>
+<%= scrivito_toggle_button_editor(obj, :meta_robots) %>
+
+<h4>Permalink</h4>
+<%= scrivito_tag(:div, obj, :_permalink, data: {autosave: "false"}) %>

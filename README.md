@@ -41,4 +41,5 @@ PagesInSitemap.each |page|
   <%= page.sitemap_frequency %>
   <%= page.sitemap_priority %>
   ...
+end
 ```

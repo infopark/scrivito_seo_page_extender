@@ -1,14 +1,19 @@
-<h4>Keywords</h4>
-<%= scrivito_tag(:div, obj, :meta_keywords, data: {editor: 'scrivito-list-editor', delimiter: ','}) %>
+<%= scrivito_details_for 'Keywords' do %>
+  <%= scrivito_tag(:div, obj, :meta_keywords, data: {editor: 'scrivito-list-editor', delimiter: ','}) %>
+<% end %>
 
-<h4>Description</h4>
-<%= scrivito_tag(:textarea, obj, :meta_description, data: {editor: 'scrivito-textarea-editor'}, style: 'width: 100%; height: 150px' ) %>
+<%= scrivito_details_for 'Description' do %>
+  <%= scrivito_tag(:textarea, obj, :meta_description, data: {editor: 'scrivito-textarea-editor'}, style: 'width: 100%; height: 150px' ) %>
+<% end %>
 
-<h4>Author</h4>
-<%= scrivito_tag(:div, obj, :meta_author) %>
+<%= scrivito_details_for 'Author' do %>
+  <%= scrivito_tag(:div, obj, :meta_author) %>
+<% end %>
 
-<h4>Indexing for search engines</h4>
-<%= scrivito_toggle_button_editor(obj, :meta_robots) %>
+<%= scrivito_details_for 'Indexing for search engines' do %>
+  <%= scrivito_toggle_button_editor(obj, :meta_robots) %>
+<% end %>
 
-<h4>Permalink</h4>
-<%= scrivito_tag(:div, obj, :_permalink, data: {autosave: "false"}) %>
+<%= scrivito_details_for 'Permalink' do %>
+  <%= scrivito_tag(:div, obj, :_permalink, data: {autosave: "false"}) %>
+<% end %>

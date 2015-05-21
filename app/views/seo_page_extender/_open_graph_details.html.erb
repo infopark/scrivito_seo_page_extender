@@ -1,32 +1,43 @@
-<h4>Title of page (Meta title as fallback)</h4>
-<%= scrivito_tag(:div, obj, :og_title) %>
+<%= scrivito_details_for 'Title of page (Meta title as fallback)' do %>
+  <%= scrivito_tag(:div, obj, :og_title) %>
+<% end %>
 
-<h4>Type</h4>
-<%= scrivito_toggle_button_editor(obj, :og_obj_type) %>
+<%= scrivito_details_for 'Type' do %>
+  <%= scrivito_toggle_button_editor(obj, :og_obj_type) %>
+<% end %>
 
-<h4>Image</h4>
-<%= scrivito_tag(:div, obj, :og_image) %>
+<%= scrivito_details_for 'Image' do %>
+  <%= scrivito_tag(:div, obj, :og_image) %>
+<% end %>
 
-<h4>Url</h4>
-<%= scrivito_tag(:div, obj, :og_url) %>
+<%= scrivito_details_for 'Url' do %>
+  <%= scrivito_tag(:div, obj, :og_url) %>
+<% end %>
 
-<h4>Description</h4>
-<%= scrivito_tag(:div, obj, :og_description) %>
+<%= scrivito_details_for 'Description' do %>
+  <%= scrivito_tag(:div, obj, :og_description) %>
+<% end %>
 
-<h4>Creator</h4>
-<%= scrivito_tag(:div, obj, :og_creator) %>
+<%= scrivito_details_for 'Creator' do %>
+  <%= scrivito_tag(:div, obj, :og_creator) %>
+<% end %>
 
-<h4>Director (For video)</h4>
-<%= scrivito_tag(:div, obj, :og_director) %>
+<%= scrivito_details_for 'Director (For video)' do %>
+  <%= scrivito_tag(:div, obj, :og_director) %>
+<% end %>
 
-<h4>Duration (For video)</h4>
-<%= scrivito_tag(:div, obj, :og_duration) %>
+<%= scrivito_details_for 'Duration (For video)' do %>
+  <%= scrivito_tag(:div, obj, :og_duration) %>
+<% end %>
 
-<h4>Release Date</h4>
-<%= scrivito_tag(:div, obj, :og_release_date) %>
+<%= scrivito_details_for 'Release Date' do %>
+  <%= scrivito_tag(:div, obj, :og_release_date) %>
+<% end %>
 
-<h4>Author (For book)</h4>
-<%= scrivito_tag(:div, obj, :og_author) %>
+<%= scrivito_details_for 'Author (For book)' do %>
+  <%= scrivito_tag(:div, obj, :og_author) %>
+<% end %>
 
-<h4>Section</h4>
-<%= scrivito_tag(:div, obj, :og_section) %>
+<%= scrivito_details_for 'Section' do %>
+  <%= scrivito_tag(:div, obj, :og_section) %>
+<% end %>

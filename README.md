@@ -43,3 +43,9 @@ PagesInSitemap.each |page|
   ...
 end
 ```
+
+For word density table render the partial for it. The attribute, the type hav to be :widgetlist, :string or :html
+
+```ruby
+<%= render 'seo_page_extender/word_density', obj: @obj, attribute: :attribute %>
+```

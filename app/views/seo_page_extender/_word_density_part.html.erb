@@ -1,0 +1,22 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Count</th>
+      <th>Density</th>
+    </tr>
+  </thead>
+  <% list.each do |word, count| %>
+    <tr>
+      <td>
+        <%= word %>
+      </td>
+      <td>
+        <%= count %>
+      </td>
+      <td>
+        <%= (words[:count] > 0 ? count.to_f * 100 / words[:count].to_f : 0).round(2) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

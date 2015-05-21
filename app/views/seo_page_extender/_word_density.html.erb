@@ -1,0 +1,26 @@
+<% words = words_density(obj, attribute) %>
+<h4>
+  <%= words[:count] %>good words on this page (words not in stop word list)
+</h4>
+<ul class='tab-list'>
+  <li class='active'>
+    Single Words
+  </li>
+  <li>
+    Two word phrases
+  </li>
+  <li>
+    Three word phrases
+  </li>
+</ul>
+<div class='tab-panels'>
+  <div class='tab-panel active' id='one-word'>
+    <%= render 'seo_page_extender/word_density_part', list: words[:density_for_one][0..20], words: words %>
+  </div>
+  <div class='tab-panel' id='two-words'>
+    <%= render 'seo_page_extender/word_density_part', list: words[:density_for_two][0..20], words: words %>
+  </div>
+  <div class='tab-panel' id='three-words'>
+    <%= render 'seo_page_extender/word_density_part', list: words[:density_for_three][0..20], words: words %>
+  </div>
+</div>

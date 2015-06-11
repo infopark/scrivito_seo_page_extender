@@ -49,3 +49,9 @@ For word density table render the partial for it. The attribute, the type hav to
 ```ruby
 <%= render 'seo_page_extender/word_density', obj: @obj, attribute: :attribute %>
 ```
+
+At least there is a partial to edit the Permalink.
+
+```ruby
+<%= render 'seo_page_extender/edit_permalink', obj: @obj %>
+```

@@ -50,8 +50,14 @@ For word density table render the partial for it. The attribute, the type hav to
 <%= render 'seo_page_extender/word_density', obj: @obj, attribute: :attribute %>
 ```
 
-At least there is a partial to edit the Permalink.
+To set a permalink to your page and make it eitable, use:
 
 ```ruby
 <%= render 'seo_page_extender/edit_permalink', obj: @obj %>
+```
+
+Adding google analytics:
+
+```ruby
+<%= render 'seo_page_extender/google_analytics', key: 'your-googleAnalytics-key' %>
 ```

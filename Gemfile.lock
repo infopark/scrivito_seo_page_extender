@@ -138,3 +138,6 @@ PLATFORMS
 DEPENDENCIES
   rake
   scrivito_seo_page_extender!
+
+BUNDLED WITH
+   1.10.3

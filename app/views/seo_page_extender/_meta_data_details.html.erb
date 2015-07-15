@@ -6,10 +6,30 @@
   <%= scrivito_tag(:textarea, obj, :meta_description, data: {editor: 'scrivito-textarea-editor'}, style: 'width: 100%; height: 150px' ) %>
 <% end %>
 
+<%= scrivito_details_for 'Copyright' do %>
+  <%= scrivito_tag(:div, obj, :meta_copyright) %>
+<% end %>
+
 <%= scrivito_details_for 'Author' do %>
   <%= scrivito_tag(:div, obj, :meta_author) %>
 <% end %>
 
-<%= scrivito_details_for 'Indexing for search engines' do %>
-  <%= scrivito_toggle_button_editor(obj, :meta_robots) %>
+<%= scrivito_details_for 'Publisher' do %>
+  <%= scrivito_tag(:div, obj, :meta_publisher) %>
+<% end %>
+
+<%= scrivito_details_for 'Type' do %>
+  <%= scrivito_tag(:div, obj, :meta_page_type) %>
+<% end %>
+
+<%= scrivito_details_for 'Topic' do %>
+  <%= scrivito_tag(:div, obj, :meta_page_topic) %>
+<% end %>
+
+<%= scrivito_details_for 'Audience' do %>
+  <%= scrivito_multi_select_button_editor(obj, :meta_audience) %>
+<% end %>
+
+<%= scrivito_details_for 'Robots' do %>
+  <%= scrivito_multi_select_button_editor(obj, :meta_robots) %>
 <% end %>

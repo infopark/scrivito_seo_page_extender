@@ -1,6 +1,8 @@
 <% if @obj.respond_to?(attribute) && !@obj.send(attribute).blank? %>
   <% if name.include? 'image' %>
     <meta content="<%= @obj.send(attribute).try(:binary_url) %>" name="<%= name %>"/>
+  <% elsif name == 'audience' || name == 'robots' %>
+    <meta content="<%= @obj.send(attribute).join(',') %>" name="<%= name %>"/>
   <% else %>
     <meta content="<%= @obj.send(attribute) %>" name="<%= name %>"/>
   <% end %>

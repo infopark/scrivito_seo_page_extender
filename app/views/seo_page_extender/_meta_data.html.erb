@@ -7,6 +7,3 @@
 <%= render "seo_page_extender/meta_attribute", attribute: "meta_page_topic", name: "page_topic" %>
 <%= render "seo_page_extender/meta_attribute", attribute: "meta_audience", name: "audience" %>
 <%= render "seo_page_extender/meta_attribute", attribute: "meta_copyright", name: "copyright" %>
-
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="<%= "https://#{request.raw_host_with_port + scrivito_path(@obj)}" %>" name="canonical"/>

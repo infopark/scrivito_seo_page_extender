@@ -2,12 +2,20 @@ module SeoPageExtenderHelper
   def words_density(obj, attribute)
     words = get_words_from_page(obj, attribute).map { |e| e.downcase.gsub(/[^a-z0-9\s]/i, '') }
     without_stop_words = remove_stop_words(words)
-    return { 
+    return {
       count: without_stop_words.count,
       density_for_one: density_with_one_word(without_stop_words),
       density_for_two: density_with_n_word(2,without_stop_words),
       density_for_three: density_with_n_word(3,without_stop_words)
     }
+  end
+
+  def canonical_link(obj)
+    if obj.respond_to?(meta_canonical) && obj.meta_canonical.present?
+      obj.meta_canonical
+    else
+      "https://#{request.raw_host_with_port + scrivito_path(obj)}"
+    end
   end
 
   private

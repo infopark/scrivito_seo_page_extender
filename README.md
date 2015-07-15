@@ -8,11 +8,11 @@ Add Gem to your gemfile
 
 Add this line to your application Stylesheet manifest:
 
-    *= require scrivito_icon_box_widget
+    *= require scrivito_seo_page_extender
 
 Add this line to your application Javascript manifest:
 
-    //= require scrivito_icon_box_widget
+    //= require scrivito_seo_page_extender
 
 ## Usage
 

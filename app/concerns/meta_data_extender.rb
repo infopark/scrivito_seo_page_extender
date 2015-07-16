@@ -1,7 +1,7 @@
 module MetaDataExtender
   def self.included(base)
     base.attribute :meta_description, :string
-    base.attribute :meta_keywords, :string
+    base.attribute :meta_keywords, :stringlist
     base.attribute :meta_author, :string
     base.attribute :meta_publisher, :string
     base.attribute :meta_copyright, :string

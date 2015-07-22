@@ -1,7 +1,3 @@
-<div class="alert alert-info">
-  More informations about twitter cards and the attributes can be <a href="https://dev.twitter.com/cards/getting-started" target="_blank">found here</a>.
-</div>
-
 <%= scrivito_details_for 'Card type' do %>
   <%= scrivito_toggle_button_editor(obj, :tc_card) %>
 <% end %>
@@ -13,14 +9,17 @@
   <li data-panel-target="#edit-twitter-card-app">For App</li>
   <li data-panel-target="#edit-twitter-card-product">For Product</li>
   <li data-panel-target="#edit-twitter-card-player">For Player</li>
+  <li class="inactive">Edit attributes by selected type</li>
 </ul>
 
 <div class="tab-panels">
   <div class="tab-panel active" id="edit-twitter-card-general">
-    <%= scrivito_details_for 'Creator (must start with @)' do %>
+    <%= scrivito_details_for do %>
+      <h3>Creator <small>Twitter name of the creator of this page e.g. @gertimon</small></h3>
       <%= scrivito_tag(:div, obj, :tc_creator) %>
     <% end %>
-    <%= scrivito_details_for 'Site' do %>
+    <%= scrivito_details_for do %>
+      <h3>Site <small>Twitter name of the company e.g. @infopark</small></h3>
       <%= scrivito_tag(:div, obj, :tc_site) %>
     <% end %>
 
@@ -125,9 +124,9 @@
       <div class="col-xs-4">
         <%= scrivito_details_for 'Dimension' do %>
           <h4>Width</h4>
-          <%= scrivito_tag(:div, obj, :tc_width) %>
+          <%= scrivito_tag(:div, obj, :tc_player_width) %>
           <h4>Height</h4>
-          <%= scrivito_tag(:div, obj, :tc_height) %>
+          <%= scrivito_tag(:div, obj, :tc_player_height) %>
         <% end %>
       </div>
       <div class="col-xs-4">
@@ -161,4 +160,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="alert alert-info">
+  More informations about twitter cards and the attributes can be <a href="https://dev.twitter.com/cards/getting-started" target="_blank">found here</a>.
 </div>

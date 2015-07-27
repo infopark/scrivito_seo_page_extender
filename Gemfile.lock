@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    scrivito_seo_page_extender (0.0.4)
+    scrivito_seo_page_extender (0.0.5)
       bundler
       scrivito_advanced_editors
       scrivito_sdk
@@ -104,12 +104,12 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
-    scrivito_advanced_editors (0.0.12)
+    scrivito_advanced_editors (0.0.14)
       bundler
       font-awesome-rails
       rails
       scrivito_sdk
-    scrivito_sdk (0.65.1)
+    scrivito_sdk (0.66.0)
       addressable (~> 2.3.2)
       diff-lcs (~> 1.2.5)
       hyp_diff (~> 0.0.4)

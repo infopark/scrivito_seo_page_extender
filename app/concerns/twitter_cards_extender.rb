@@ -1,7 +1,7 @@
 module TwitterCardsExtender
   def self.included(base)
     # General Attributes
-    base.attribute :tc_card, :enum, values: ["summery", "summary_large_image", "photo", "gallery", "product", "app", "player"]
+    base.attribute :tc_card, :enum, values: ["summary", "summary_large_image", "photo", "gallery", "product", "app", "player"]
     base.attribute :tc_creator, :string
     base.attribute :tc_site, :string
     base.attribute :tc_title, :string

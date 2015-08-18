@@ -1,3 +1,5 @@
 <%= scrivito_details_for 'Permalink' do %>
   <%= scrivito_tag(:div, obj, :_permalink, data: {autosave: "false"}) %>
+  Fallback path:
+  <%= link_to @obj.id, scrivito_path(obj), target: '_blank' %>
 <% end %>

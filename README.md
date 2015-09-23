@@ -83,13 +83,13 @@ end
 
 ### Word density
 
-For a word density table, render the partial for it. The type of your attribute have to be :widgetlist, :string or :html
+For a word density table, render the partial for it. The type of your attribute have to be `:widgetlist`, `:string` or `:html
 
 ```ruby
 <%= render 'seo_page_extender/word_density', obj: @obj, attribute: :attribute %>
 ```
 
-The Gem includes a stop word list for english. If you need more languages or different words, you can create e method in your `obj.rb`.
+The Gem includes a stop word list for english. If you need more languages or different words, you can create a method in your `obj.rb`.
 
 ```ruby
   # in obj.rb
@@ -115,18 +115,17 @@ To set a permalink to your page and make it editable, use:
 
 ### Google analytics
 
-Adding google analytics:
-
-A partial to add google analytics can be used:
-`anonymize-ip` is set to `false` in this script.
+A partial to add google analytics can be used.
 
 ```ruby
 <%= render 'seo_page_extender/google_analytics', key: 'your-googleAnalytics-key' %>
 ```
 
+We set `anonymize-ip` to `false` in this script.
+
 ### Canonical link
 
-Only render the partial. In Meta data detail view, you can set your own url if needed. Per default, the scrivito_path method is used.
+By default we use `scrivito_path` to define the canonical link. If you need a different one, you can set the `meta_canonical` attribute in you obj.
 
 ```ruby
 <%= render 'seo_page_extender/canonical_link' %>

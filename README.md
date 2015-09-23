@@ -64,6 +64,7 @@ def Page < Obj
     ["noindex", "nofollow"]
   end
 end
+```
 
 ## Other Modules
 

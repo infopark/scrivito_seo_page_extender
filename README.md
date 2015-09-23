@@ -52,6 +52,19 @@ In your application layout at to the head-tag the attribute views.
 </head>
 ```
 
+### Setting Defaults
+
+We do not set any defaults for meta attributes. This is up to you. You can do this easily by using `default_for`
+
+```ruby
+def Page < Obj
+  include MetaDataExtender
+
+  default_for :meta_robots do |attribute, scrivito_user|
+    ["noindex", "nofollow"]
+  end
+end
+
 ## Other Modules
 
 ### Sitemap attributes
@@ -74,6 +87,22 @@ For a word density table, render the partial for it. The type of your attribute 
 ```ruby
 <%= render 'seo_page_extender/word_density', obj: @obj, attribute: :attribute %>
 ```
+
+The Gem includes a stop word list for english. If you need more languages or different words, you can create e method in your `obj.rb`.
+
+```ruby
+  # in obj.rb
+  def self.stop_word_list
+    if language == :de
+      ["wort1","wort2","wort3","wort4",...]
+    else
+      ["word1","word2","word3","word4",...]
+    end
+  end
+```
+
+Be Aware:
+This word density plugin uses downcas on your content. So all words in your stop word list have to be in lower case.
 
 ### Edit permalink
 

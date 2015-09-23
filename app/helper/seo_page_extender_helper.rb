@@ -1,6 +1,6 @@
 module SeoPageExtenderHelper
   def words_density(obj, attribute)
-    words = get_words_from_page(obj, attribute).map { |e| e.downcase.gsub(/[^a-z0-9\s]/i, '') }
+    words = get_words_from_page(obj, attribute).map { |e| e.downcase.gsub(/[^[:word:]\s]/, '') }
     without_stop_words = remove_stop_words(words)
     return {
       count: without_stop_words.count,

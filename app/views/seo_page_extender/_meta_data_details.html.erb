@@ -36,4 +36,7 @@
 
 <%= scrivito_details_for 'Canonical Link' do %>
   <%= scrivito_tag(:div, obj, :meta_canonical) %>
+  <div class="text-info">
+    Using <strong><%= "https://#{request.raw_host_with_port + scrivito_path(obj)}" %></strong> as default.
+  </div>
 <% end %>

@@ -2,23 +2,15 @@
 
 ## Installation
 
-Add Gem to your gemfile
+Add the gem to your Gemfile:
 
     gem 'scrivito_seo_page_extender'
 
-Add this line to your application Stylesheet manifest:
-
-    *= require scrivito_seo_page_extender
-
-Add this line to your application Javascript manifest:
-
-    //= require scrivito_seo_page_extender
-
 ## Usage
 
-### In your Model
+### In your model
 
-Include mixins you want to use to your Models.
+Include the mixins you want to use in your model:
 
 ```ruby
 class Page < Obj
@@ -40,7 +32,7 @@ end
 
 ## In your application layout
 
-In your application layout at to the head-tag the attribute views.
+In your application layout render the partials in the `head` tag:
 
 ```html
 <head>
@@ -52,9 +44,9 @@ In your application layout at to the head-tag the attribute views.
 </head>
 ```
 
-### Setting Defaults
+### Setting defaults
 
-We do not set any defaults for meta attributes. This is up to you. You can do this easily by using `default_for`
+We do not set any defaults for meta attributes. If you want to, you can do this easily using `default_for`:
 
 ```ruby
 def Page < Obj
@@ -66,11 +58,11 @@ def Page < Obj
 end
 ```
 
-## Other Modules
+## Other modules
 
 ### Sitemap attributes
 
-The seo sitemap attributes can be used in your sitemap.xml if you have one.
+The SEO sitemap attributes can be used in your sitemap.xml if you have one.
 
 ```ruby
 PagesInSitemap.each |page|
@@ -83,13 +75,14 @@ end
 
 ### Word density
 
-For a word density table, render the partial for it. The type of your attribute have to be `:widgetlist`, `:string` or `:html
+To have the word density table displayed, render the partial for it. The type of the attribute whose value should be analyzed can be  `widgetlist`, `string` or `html`:
 
 ```ruby
-<%= render 'seo_page_extender/word_density', obj: @obj, attribute: :attribute %>
+  <%= render'seo_page_extender/word_density', obj: @obj, attribute: :attribute %>
 ```
 
-The Gem includes a stop word list for english. If you need more languages or different words, you can create a method in your `obj.rb`.
+
+The gem includes a stop word list for English. If you require different stop words or stop words for different or additional languages, you can provide a method for retrieving the list in your `obj.rb`:
 
 ```ruby
   # in obj.rb
@@ -97,36 +90,35 @@ The Gem includes a stop word list for english. If you need more languages or dif
     if language == :de
       ["wort1","wort2","wort3","wort4",...]
     else
-      ["word1","word2","word3","word4",...]
+      default_stop_word_list
     end
   end
 ```
 
-Be Aware:
-This word density plugin uses downcas on your content. So all words in your stop word list have to be in lower case.
-
-### Edit permalink
-
-To set a permalink to your page and make it editable, use:
-
-```ruby
-<%= render 'seo_page_extender/edit_permalink', obj: @obj %>
-```
+The word density plugin lowercases your content. Therefore, the words in your stop word list need to be in lower case.
 
 ### Google analytics
 
-A partial to add google analytics can be used.
+The partial that adds Google Analytics to your view can be rendered like this:
 
 ```ruby
 <%= render 'seo_page_extender/google_analytics', key: 'your-googleAnalytics-key' %>
 ```
 
-We set `anonymize-ip` to `false` in this script.
+`anonymize-ip` has been set to `true` in this script.
 
 ### Canonical link
 
-By default we use `scrivito_path` to define the canonical link. If you need a different one, you can set the `meta_canonical` attribute in you obj.
+By default, the canonical link is determined using `scrivito_path`.
 
 ```ruby
 <%= render 'seo_page_extender/canonical_link' %>
+```
+
+If you need different canonical links, you can add the `meta_canonical` attribute to your object classes and set the attribute values of the CMS objects to the desired link.
+
+```ruby
+class MyObj < Obj
+  attribute :meta_canonical, :string
+end
 ```

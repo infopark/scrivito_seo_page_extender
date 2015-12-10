@@ -1,9 +1,9 @@
 <%= scrivito_details_for 'Keywords' do %>
-  <%= scrivito_tag(:div, obj, :meta_keywords, data: {editor: 'scrivito-list-editor'}) %>
+  <%= scrivito_tag(:div, obj, :meta_keywords) %>
 <% end %>
 
 <%= scrivito_details_for 'Description' do %>
-  <%= scrivito_tag(:div, obj, :meta_description, data: {editor: 'scrivito-textarea-editor'}) %>
+  <%= scrivito_tag(:div, obj, :meta_description) %>
 <% end %>
 
 <%= scrivito_details_for 'Copyright' do %>
@@ -27,11 +27,11 @@
 <% end %>
 
 <%= scrivito_details_for 'Audience' do %>
-  <%= scrivito_multi_select_button_editor(obj, :meta_audience) %>
+  <%= scrivito_tag(:div, obj, :meta_audience) %>
 <% end %>
 
 <%= scrivito_details_for 'Robots' do %>
-  <%= scrivito_multi_select_button_editor(obj, :meta_robots) %>
+  <%= scrivito_tag(:div, obj, :meta_robots) %>
 <% end %>
 
 <%= scrivito_details_for 'Canonical Link' do %>

@@ -1,5 +1,7 @@
 # ScrivitoSeoPageExtender
 
+Includes attributes for defining meta tags as well as Open Graph and Twitter cards.
+
 ## Installation
 
 Add the gem to your Gemfile:
@@ -8,9 +10,9 @@ Add the gem to your Gemfile:
 
 ## Usage
 
-### In your model
+### Extend your models
 
-Include the mixins you want to use in your model:
+Include the mixins you want to use in your individual page models:
 
 ```ruby
 class Page < Obj
@@ -21,7 +23,7 @@ class Page < Obj
 end
 ```
 
-### In your details view
+### Extend your details view
 
 ```ruby
 <%= render 'seo_page_extender/meta_data_details', obj: @obj %>
@@ -30,9 +32,9 @@ end
 <%= render 'seo_page_extender/sitemap_details', obj: @obj %>
 ```
 
-## In your application layout
+## Extend your application layout
 
-In your application layout render the partials in the `head` tag:
+In your application layout, render the partials in the `head` tag:
 
 ```html
 <head>
@@ -46,7 +48,7 @@ In your application layout render the partials in the `head` tag:
 
 ### Setting defaults
 
-We do not set any defaults for meta attributes. If you want to, you can do this easily using `default_for`:
+The widget does not set any defaults for meta attributes. If you want to, you can do this easily using the `default_for` method:
 
 ```ruby
 def Page < Obj
@@ -58,7 +60,7 @@ def Page < Obj
 end
 ```
 
-## Other modules
+## Futher functionality
 
 ### Sitemap attributes
 
@@ -75,12 +77,11 @@ end
 
 ### Word density
 
-To have the word density table displayed, render the partial for it. The type of the attribute whose value should be analyzed can be  `widgetlist`, `string` or `html`:
+To have the word density table displayed, render the partial for it. The type of the attribute whose value should be analyzed can be `widgetlist`, `string` or `html`:
 
-```ruby
-  <%= render'seo_page_extender/word_density', obj: @obj, attribute: :attribute %>
+```xml
+  <%= render 'seo_page_extender/word_density', obj: @obj, attribute: :attribute %>
 ```
-
 
 The gem includes a stop word list for English. If you require different stop words or stop words for different or additional languages, you can provide a method for retrieving the list in your `obj.rb`:
 
@@ -101,7 +102,7 @@ The word density plugin lowercases your content. Therefore, the words in your st
 
 The partial that adds Google Analytics to your view can be rendered like this:
 
-```ruby
+```xml
 <%= render 'seo_page_extender/google_analytics', key: 'your-googleAnalytics-key' %>
 ```
 
@@ -111,7 +112,7 @@ The partial that adds Google Analytics to your view can be rendered like this:
 
 By default, the canonical link is determined using `scrivito_path`.
 
-```ruby
+```xml
 <%= render 'seo_page_extender/canonical_link' %>
 ```
 

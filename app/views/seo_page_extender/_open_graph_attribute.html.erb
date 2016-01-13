@@ -1,0 +1,7 @@
+<% if @obj.respond_to?(attribute) && !@obj.send(attribute).blank? %>
+  <% if name[/image\d?$/] %>
+    <meta content="<%= scrivito_path(@obj[attribute]) %>" name="<%= name %>"/>
+  <% else %>
+    <meta content="<%= @obj.send(attribute).tr("\u00a0", ' ').strip %>" property="<%= name %>"/>
+  <% end %>
+<% end %>

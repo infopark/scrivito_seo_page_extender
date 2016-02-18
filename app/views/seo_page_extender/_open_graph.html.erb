@@ -1,11 +1,46 @@
-<%= render "seo_page_extender/meta_attribute", attribute: "og_title", name: "og:title" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_image", name: "og:image" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_url", name: "og:url" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_description", name: "og:description" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_creator", name: "og:creator" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_obj_type", name: "og:type" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_director", name: "og:dircetor" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_duration", name: "og:duration" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_release_date", name: "og:release_date" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_author", name: "og:author" -%>
-<%= render "seo_page_extender/meta_attribute", attribute: "og_section", name: "og:section" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "og_title", name: "og:title" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "og_type", name: "og:type" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "og_locale", name: "og:locale" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "og_locale_alternate", name: "og:locale:alternate" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "og_description", name: "og:description" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "og_determiner", name: "og:determiner" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "og_image", name: "og:image" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "og_audio", name: "og:audio" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "og_video", name: "og:video" -%>
+
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "article_published_time", name: "article:published_time" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "article_expiration_time", name: "article:expiration_time" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "article_author", name: "article:author" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "article_section", name: "article:section" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "article_tag", name: "article:tag" -%>
+
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "book_author", name: "book:author" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "book_isbn", name: "book:isbn" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "book_release_date", name: "book:release_date" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "book_tag", name: "book:tag" -%>
+
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "profile_first_name", name: "profile:first_name" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "profile_last_name", name: "profile:last_name" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "profile_username", name: "profile:username" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "profile_gender", name: "profile:gender" -%>
+
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "video_actor", name: "video:actor" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "video_actor_role", name: "video:actor:role" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "video_director", name: "video:director" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "video_writer", name: "video:witer" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "video_duration", name: "video:duration" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "video_release_date", name: "video:release_date" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "video_tag", name: "video:tag" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "video_series", name: "video:series" -%>
+
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "music_duration", name: "music:duration" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "music_musician", name: "music:musician" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "music_album", name: "music:album" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph", attribute: "music_creator", name: "music:creator" -%>
+<%= render "seo_page_extender/meta_attribute_open_graph_array", attribute: "music_song", name: "music:song" -%>
+
+<meta content="<%= canonical_link(@obj) %>" property="og:url"/>
+
+<% if Obj.respond_to? 'open_graph_site_name' %>
+  <meta content="<%= Obj.open_graph_site_name %>" property="og:sitename"/>
+<% end %>

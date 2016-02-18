@@ -1,0 +1,13 @@
+<% if @obj.respond_to?(attribute) && !@obj.send(attribute).blank? %>
+  <% @obj[attribute].each do |obj| %>
+    <% if !obj.is_a? String %>
+      <meta content="<%= scrivito_path(obj) %>" property="<%= name %>"/>
+      <% if obj.is_a? Image %>
+        <meta content="<%= obj.width %>" property="og:image:width"/>
+        <meta content="<%= obj.height %>" property="og:image:height"/>
+      <% end %>
+    <% else %>
+      <meta content="<%= obj %>" property="<%= name %>"/>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,36 @@
+<%= scrivito_details_for 'Open Graph Type' do %>
+  <%= scrivito_tag :div, obj, :og_type %>
+<% end %>
+
+<%= scrivito_details_for 'Open Graph Title' do %>
+  <%= scrivito_tag :div, obj, :og_title %>
+<% end %>
+
+<%= scrivito_details_for 'Open Graph Locale <small>e.g. en_us</small>'.html_safe do %>
+  <%= scrivito_tag :div, obj, :og_locale %>
+<% end %>
+
+<%= scrivito_details_for 'Open Graph Locale Alternate' do %>
+  <%= scrivito_tag :div, obj, :og_locale_alternate %>
+<% end %>
+
+<%= scrivito_details_for 'Open Graph Description' do %>
+  <%= scrivito_tag :div, obj, :og_description %>
+<% end %>
+
+<%= scrivito_details_for 'Open Graph Determiner' do %>
+  <%= scrivito_tag :div, obj, :og_determiner, data: {toggle_button_list: ['a','an','the','','auto']} %>
+<% end %>
+
+<%= scrivito_details_for 'Open Graph Image' do %>
+  <%= scrivito_tag :div, obj, :og_image %>
+<% end %>
+
+<%= scrivito_details_for 'Open Graph Audio' do %>
+  <%= scrivito_tag :div, obj, :og_audio %>
+<% end %>
+
+<%= scrivito_details_for 'Open Graph Video' do %>
+  <%= scrivito_tag :div, obj, :og_video %>
+<% end %>
+

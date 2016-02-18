@@ -15,12 +15,7 @@ Gem::Specification.new do |gem|
   gem.description = "A Scrivito Widget to extend your Page with some useful SEO Features, Metadata or Open Graph."
   gem.license     = "LGPL-3.0"
 
-  gem.files = Dir[
-    "{app,lib,scrivito}/**/*",
-    "LICENSE",
-    "Rakefile",
-    "README.rdoc"
-  ]
+  gem.files = Dir["{app,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
   gem.add_dependency 'bundler'
   gem.add_dependency 'scrivito_sdk'

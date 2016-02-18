@@ -32,6 +32,27 @@ end
 <%= render 'seo_page_extender/sitemap_details', obj: @obj %>
 ```
 
+### Partial Use of all atributes
+
+Open Graph includes attributes which are not required everywhere. E.g. Video, Book or Music. In your details view, you can render the partials for the required attributes grouped by the types of Open Graph:
+
+```ruby
+<%= render 'seo_page_extender/open_graph/base', obj: @obj %>
+<%= render 'seo_page_extender/open_graph/article', obj: @obj %>
+<%= render 'seo_page_extender/open_graph/books', obj: @obj %>
+<%= render 'seo_page_extender/open_graph/profile', obj: @obj %>
+<%= render 'seo_page_extender/open_graph/music', obj: @obj %>
+<%= render 'seo_page_extender/open_graph/video', obj: @obj %>
+```
+
+Some pages has a specific `site_name`. You can define a method in your obj.rb to set one:
+
+```ruby
+def open_graph_site_name
+  return 'my_page_name' # e.g. imdb
+end
+```
+
 ## Extend your application layout
 
 In your application layout, render the partials in the `head` tag:

@@ -1,47 +1,16 @@
-<%= scrivito_details_for 'Title' do %>
-  <%= scrivito_tag(:div, obj, :og_title) %>
-<% end %>
+<%= render 'seo_page_extender/open_graph/base', obj: obj %>
 
-<%= scrivito_details_for 'Type' do %>
-  <%= scrivito_tag(:div, obj, :og_obj_type) %>
-<% end %>
+<h2>Article</h2>
+<%= render 'seo_page_extender/open_graph/article', obj: obj %>
 
-<%= scrivito_details_for 'Image' do %>
-  <%= scrivito_tag(:div, obj, :og_image) %>
-<% end %>
+<h2>Book</h2>
+<%= render 'seo_page_extender/open_graph/book', obj: obj %>
 
-<%= scrivito_details_for 'Url' do %>
-  <%= scrivito_tag(:div, obj, :og_url) %>
-<% end %>
+<h2>Music</h2>
+<%= render 'seo_page_extender/open_graph/music', obj: obj %>
 
-<%= scrivito_details_for 'Description' do %>
-  <%= scrivito_tag(:div, obj, :og_description) %>
-<% end %>
+<h2>Profile</h2>
+<%= render 'seo_page_extender/open_graph/profile', obj: obj %>
 
-<%= scrivito_details_for 'Creator' do %>
-  <%= scrivito_tag(:div, obj, :og_creator) %>
-<% end %>
-
-<%= scrivito_details_for 'Director (For video)' do %>
-  <%= scrivito_tag(:div, obj, :og_director) %>
-<% end %>
-
-<%= scrivito_details_for 'Duration (For video)' do %>
-  <%= scrivito_tag(:div, obj, :og_duration) %>
-<% end %>
-
-<%= scrivito_details_for 'Release Date' do %>
-  <%= scrivito_tag(:div, obj, :og_release_date) %>
-<% end %>
-
-<%= scrivito_details_for 'Author (For book)' do %>
-  <%= scrivito_tag(:div, obj, :og_author) %>
-<% end %>
-
-<%= scrivito_details_for 'Section' do %>
-  <%= scrivito_tag(:div, obj, :og_section) %>
-<% end %>
-
-<div class="alert alert-info">
-  <a href="http://ogp.me/" target="_blank">More about Open Graph</a>.
-</div>
+<h2>Video</h2>
+<%= render 'seo_page_extender/open_graph/video', obj: obj %>

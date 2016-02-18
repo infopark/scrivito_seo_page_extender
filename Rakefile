@@ -15,10 +15,5 @@ RDoc::Task.new(:rdoc) do |rdoc|
 end
 
 
-
-load 'rails/tasks/statistics.rake'
-
-
-
 Bundler::GemHelper.install_tasks
 

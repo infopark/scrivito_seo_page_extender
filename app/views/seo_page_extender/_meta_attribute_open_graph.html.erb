@@ -1,0 +1,11 @@
+<% if @obj.respond_to?(attribute) && !@obj.send(attribute).blank? %>
+  <% if @obj[attribute].respond_to?('binary?') && @obj[attribute].binary? %>
+    <meta content="<%= scrivito_path(@obj[attribute]) %>" property="<%= name %>"/>
+    <% if @obj.is_a? Image %>
+        <meta content="<%= obj.width %>" property="og:image:width"/>
+        <meta content="<%= obj.height %>" property="og:image:height"/>
+      <% end %>
+  <% else %>
+    <meta content="<%= @obj.send(attribute) %>" property="<%= name %>"/>
+  <% end %>
+<% end %>

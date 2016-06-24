@@ -1,3 +1,3 @@
 module ScrivitoSeoPageExtender
-  VERSION = "0.91.0.rc1"
+  VERSION = "0.91.0"
 end

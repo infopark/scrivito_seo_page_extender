@@ -17,8 +17,5 @@ Gem::Specification.new do |gem|
 
   gem.files = Dir["{app,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
-  gem.add_dependency 'bundler'
   gem.add_dependency 'scrivito_sdk'
-
-  gem.add_development_dependency 'rake'
 end

@@ -144,3 +144,7 @@ class MyObj < Obj
   attribute :meta_canonical, :string
 end
 ```
+
+## Customization
+
+If you use the default details views in this gem, we recommend tu activate [Scrivito Advanced Editors](https://github.com/Scrivito/scrivito_advanced_editors) to utilize the tabs used by this gem.

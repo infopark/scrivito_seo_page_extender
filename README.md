@@ -147,4 +147,4 @@ end
 
 ## Customization
 
-If you use the default details views in this gem, we recommend tu activate [Scrivito Advanced Editors](https://github.com/Scrivito/scrivito_advanced_editors) to utilize the tabs used by this gem.
+If you use the default details views provided in this gem, we recommend to activate [Scrivito Advanced Editors](https://github.com/Scrivito/scrivito_advanced_editors) to utilize the tabs used by this gem.

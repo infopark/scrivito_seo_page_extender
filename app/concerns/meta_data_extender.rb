@@ -11,6 +11,6 @@ module MetaDataExtender
     base.attribute :meta_page_topic, :string
     base.attribute :meta_page_type, :string
     base.attribute :meta_audience, :multienum , values: ["all", "adult", "advanced", "artist", "business", "child", "college", "craft", "elementary", "elhi", "government", "grownup", "health", "high", "institution", "intermediate", "introductory", "law", "lawyer", "listeners", "military", "news", "older", "parent", "patient", "popular", "scholarly", "teacher", "tts", "viewers"]
-    base.attribute :meta_robots, :multienum, values: ["noindex", "nofollow", "noarchive", "nosnippet", "noimageindex", "notranslate"]
+    base.attribute :meta_robots, :multienum, values: ["noindex", "nofollow", "noarchive", "nosnippet", "noimageindex", "notranslate", "noodp"]
   end
 end

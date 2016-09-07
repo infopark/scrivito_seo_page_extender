@@ -14,7 +14,7 @@ module SeoPageExtenderHelper
     if obj.respond_to?(:meta_canonical) && obj.meta_canonical.present?
       obj.meta_canonical
     else
-      "https://#{request.raw_host_with_port + scrivito_path(obj)}"
+      "https://#{request.raw_host_with_port + (scrivito_path(obj).split('?').first)}"
     end
   end
 

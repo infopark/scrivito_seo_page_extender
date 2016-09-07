@@ -30,13 +30,13 @@
   <%= scrivito_tag(:div, obj, :meta_audience) %>
 <% end %>
 
-<%= scrivito_details_for 'Robots' do %>
+<%= scrivito_details_for 'Robots<small><a href="https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag" target="_blank">?</a></small>'.html_safe do %>
   <%= scrivito_tag(:div, obj, :meta_robots) %>
 <% end %>
 
 <%= scrivito_details_for 'Canonical Link' do %>
   <%= scrivito_tag(:div, obj, :meta_canonical) %>
   <div class="text-info">
-    Using <strong><%= "https://#{request.raw_host_with_port + scrivito_path(obj)}" %></strong> as default.
+    Using <strong><%= canonical_link(@obj) %></strong> as default.
   </div>
 <% end %>

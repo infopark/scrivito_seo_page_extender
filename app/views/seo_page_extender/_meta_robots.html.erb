@@ -1,0 +1,5 @@
+<% if @obj.respond_to?(attribute) && !@obj.send(attribute).blank? %>
+  <meta content="<%= @obj.send(attribute).join(',') %>" name="<%= name %>"/>
+<%= else %>
+  <meta content="<%= all %>" name="<%= name %>"/>
+<% end %>

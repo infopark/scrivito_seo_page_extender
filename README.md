@@ -145,6 +145,30 @@ class MyObj < Obj
 end
 ```
 
+## Configuration
+
+Add an initializer to activate automatic attribute mapping for titles and descriptions:
+
+```ruby
+ScrivitoSeoPageExtender.configure do |config|
+  config.attribute_mapping = true
+end
+```
+
+You can overwrite the default attribute mapping depending on your app in the obj.rb with:
+
+```ruby
+def self.seo_attribute_mapping(obj)
+  {
+    og_title: obj.my_app_title,
+    og_description: obj.my_app_description
+    ...
+  }
+end
+```
+
+The key is an attribute from meta, open graph or twitter cards modules, the value is app specific. More detailed values like `obj.my_title || obj.title || 'Fallback title'` are possible.
+
 ## Customization
 
 If you use the default details views provided in this gem, we recommend to activate [Scrivito Advanced Editors](https://github.com/Scrivito/scrivito_advanced_editors) to utilize the tabs used by this gem.

@@ -45,10 +45,12 @@ Open Graph includes attributes which are not required everywhere. E.g. Video, Bo
 <%= render 'seo_page_extender/open_graph/video', obj: @obj %>
 ```
 
+### Page specific
+
 Some pages has a specific `site_name`. You can define a method in your obj.rb to set one:
 
 ```ruby
-def open_graph_site_name
+def self.open_graph_site_name
   return 'my_page_name' # e.g. imdb
 end
 ```
@@ -121,7 +123,7 @@ The word density plugin lowercases your content. Therefore, the words in your st
 
 ### Google analytics
 
-The partial that adds Google Analytics to your view can be rendered like this:
+The partial that adds the standard implemetation of Google Analytics to your view can be rendered like this:
 
 ```xml
 <%= render 'seo_page_extender/google_analytics', key: 'your-googleAnalytics-key' %>

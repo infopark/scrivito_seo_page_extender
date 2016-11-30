@@ -2,10 +2,10 @@
   <% if @obj[attribute].respond_to?('binary?') && @obj[attribute].binary? %>
     <meta content="<%= scrivito_path(@obj[attribute]) %>" property="<%= name %>"/>
     <% if @obj.is_a? Image %>
-        <meta content="<%= obj.width %>" property="og:image:width"/>
-        <meta content="<%= obj.height %>" property="og:image:height"/>
-      <% end %>
+      <meta content="<%= obj.width %>" property="og:image:width"/>
+      <meta content="<%= obj.height %>" property="og:image:height"/>
+    <% end %>
   <% else %>
-    <meta content="<%= @obj.send(attribute) %>" property="<%= name %>"/>
+    <meta content="<%= seo_attribute_fallback(@obj, attribute.to_sym) %>" property="<%= name %>"/>
   <% end %>
 <% end %>

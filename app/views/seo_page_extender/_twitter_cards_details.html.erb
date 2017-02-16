@@ -1,15 +1,14 @@
 <%= scrivito_details_for 'Card type' do %>
-  <%= scrivito_tag(:div, obj, :tc_card) %>
+  <%= scrivito_tag(:div, obj, :tc_card, data: {tab_to_toggle: '#twitter-card-types-tab'}) %>
 <% end %>
 
-<ul class="tab-list">
-  <li class="active" data-panel-target="#edit-twitter-card-general">For All</li>
-  <li data-panel-target="#edit-twitter-card-photo">For Photo</li>
-  <li data-panel-target="#edit-twitter-card-gallery">For Gallery</li>
-  <li data-panel-target="#edit-twitter-card-app">For App</li>
-  <li data-panel-target="#edit-twitter-card-product">For Product</li>
-  <li data-panel-target="#edit-twitter-card-player">For Player</li>
-  <li class="inactive">Edit attributes by selected type</li>
+<ul class="tab-list" id="twitter-card-types-tab">
+  <%= content_tag :li, 'Base attributes', data: {panel_target: '#edit-twitter-card-general'}%>
+  <%= content_tag :li, 'Photo & Summary', data: {panel_target: '#edit-twitter-card-photo', allowed_values: ['summary_large_image', 'photo']}%>
+  <%= content_tag :li, 'Gallery attributes', data: {panel_target: '#edit-twitter-card-gallery', allowed_values: ['gallery']}%>
+  <%= content_tag :li, 'App attributes', data: {panel_target: '#edit-twitter-card-app', allowed_values: ['app']}%>
+  <%= content_tag :li, 'Product attributes', data: {panel_target: '#edit-twitter-card-product', allowed_values: ['product']}%>
+  <%= content_tag :li, 'Player attributes', data: {panel_target: '#edit-twitter-card-player', allowed_values: ['player']}%>
 </ul>
 
 <div class="tab-panels">

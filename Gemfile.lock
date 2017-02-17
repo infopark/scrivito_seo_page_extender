@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    scrivito_seo_page_extender (1.1.0.beta1)
+    scrivito_seo_page_extender (1.1.1)
       scrivito_sdk
 
 GEM

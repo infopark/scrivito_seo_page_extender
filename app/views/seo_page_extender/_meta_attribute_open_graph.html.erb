@@ -1,10 +1,9 @@
 <% if @obj.respond_to?(attribute) && seo_attribute_fallback(@obj, attribute.to_sym).present? %>
-  <% if @obj[attribute].respond_to?('binary?') && @obj[attribute].binary? %>
+  <% if attribute == 'og_image' %>
     <meta content="<%= scrivito_path(@obj[attribute]) %>" property="<%= name %>"/>
-    <% if @obj.is_a? Image %>
-      <meta content="<%= obj.width %>" property="og:image:width"/>
-      <meta content="<%= obj.height %>" property="og:image:height"/>
-    <% end %>
+    <meta content="<%= @obj.image_type %>" property="og:image:type"/>
+    <meta content="<%= @obj.image_width %>" property="og:image:width"/>
+    <meta content="<%= @obj.image_height %>" property="og:image:height"/>
   <% else %>
     <meta content="<%= seo_attribute_fallback(@obj, attribute.to_sym) %>" property="<%= name %>"/>
   <% end %>

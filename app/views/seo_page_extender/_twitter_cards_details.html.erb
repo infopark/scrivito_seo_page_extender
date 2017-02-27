@@ -4,10 +4,7 @@
 
 <ul class="tab-list" id="twitter-card-types-tab">
   <%= content_tag :li, 'Base attributes', data: {panel_target: '#edit-twitter-card-general'}%>
-  <%= content_tag :li, 'Photo & Summary', data: {panel_target: '#edit-twitter-card-photo', allowed_values: ['summary_large_image', 'photo']}%>
-  <%= content_tag :li, 'Gallery attributes', data: {panel_target: '#edit-twitter-card-gallery', allowed_values: ['gallery']}%>
   <%= content_tag :li, 'App attributes', data: {panel_target: '#edit-twitter-card-app', allowed_values: ['app']}%>
-  <%= content_tag :li, 'Product attributes', data: {panel_target: '#edit-twitter-card-product', allowed_values: ['product']}%>
   <%= content_tag :li, 'Player attributes', data: {panel_target: '#edit-twitter-card-player', allowed_values: ['player']}%>
 </ul>
 
@@ -29,50 +26,10 @@
     <%= scrivito_details_for 'Description' do %>
       <%= scrivito_tag(:div, obj, :tc_description) %>
     <% end %>
-  </div>
 
-  <div class="tab-panel" id="edit-twitter-card-photo">
-    <div class="row">
-      <div class="col-xs-4">
-        <%= scrivito_details_for 'Image' do %>
-          <%= scrivito_tag(:div, obj, :tc_image) %>
-        <% end %>
-      </div>
-      <div class="col-xs-8">
-        <%= scrivito_details_for 'Width' do %>
-          <%= scrivito_tag(:div, obj, :tc_image_width) %>
-        <% end %>
-
-        <%= scrivito_details_for 'height' do %>
-          <%= scrivito_tag(:div, obj, :tc_image_height) %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="tab-panel" id="edit-twitter-card-gallery">
-    <div class="row">
-      <div class="col-xs-3">
-        <%= scrivito_details_for 'Image 1' do %>
-          <%= scrivito_tag(:div, obj, :tc_image1) %>
-        <% end %>
-      </div>
-      <div class="col-xs-3">
-        <%= scrivito_details_for 'Image 2' do %>
-          <%= scrivito_tag(:div, obj, :tc_image2) %>
-        <% end %>
-      </div>
-      <div class="col-xs-3">
-        <%= scrivito_details_for 'Image 3' do %>
-          <%= scrivito_tag(:div, obj, :tc_image3) %>
-        <% end %>
-      </div>
-      <div class="col-xs-3">
-        <%= scrivito_details_for 'Image 4' do %>
-          <%= scrivito_tag(:div, obj, :tc_image4) %>
-        <% end %>
-      </div>
-    </div>
+    <%= scrivito_details_for 'Image' do %>
+      <%= scrivito_tag(:div, obj, :tc_image) %>
+    <% end %>
   </div>
 
   <div class="tab-panel" id="edit-twitter-card-app">
@@ -134,27 +91,6 @@
           <%= scrivito_tag(:div, obj, :tc_player_stream) %>
           <h4>Content Type</h4>
           <%= scrivito_tag(:div, obj, :tc_player_stream_content_type) %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="tab-panel" id="edit-twitter-card-product">
-    <div class="row">
-      <div class="col-xs-6">
-        <%= scrivito_details_for 'Top Data' do %>
-          <h4>Top customizable data field</h4>
-          <%= scrivito_tag(:div, obj, :tc_product_data1) %>
-          <h4>Customizable label or units</h4>
-          <%= scrivito_tag(:div, obj, :tc_product_label1) %>
-        <% end %>
-      </div>
-      <div class="col-xs-6">
-        <%= scrivito_details_for 'Bottom Data' do %>
-          <h4>Bottom customizable data field</h4>
-          <%= scrivito_tag(:div, obj, :tc_product_data2) %>
-          <h4>Customizable label or units</h4>
-          <%= scrivito_tag(:div, obj, :tc_product_label2) %>
         <% end %>
       </div>
     </div>

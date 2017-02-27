@@ -43,5 +43,17 @@ module OpenGraphExtender
     base.attribute :music_album, :stringlist
     base.attribute :music_creator, :string
     base.attribute :music_song, :stringlist
+
+    def image_width
+      self.og_image.meta_data[:width]
+    end
+
+    def image_height
+      self.og_image.meta_data[:height]
+    end
+
+    def image_type
+      self.og_image.meta_data[:content_type]
+    end
   end
 end

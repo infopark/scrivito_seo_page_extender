@@ -1,7 +1,7 @@
 module TwitterCardsExtender
   def self.included(base)
     # General Attributes
-    base.attribute :tc_card, :enum, values: ["summary", "summary_large_image", "photo", "gallery", "product", "app", "player"]
+    base.attribute :tc_card, :enum, values: ["summary", "summary_large_image", "app", "player"]
     base.attribute :tc_creator, :string
     base.attribute :tc_site, :string
     base.attribute :tc_title, :string
@@ -9,12 +9,7 @@ module TwitterCardsExtender
 
     # Image and Gallery
     base.attribute :tc_image, :reference
-    base.attribute :tc_image_width, :string
-    base.attribute :tc_image_height, :string
-    base.attribute :tc_image1, :reference
-    base.attribute :tc_image2, :reference
-    base.attribute :tc_image3, :reference
-    base.attribute :tc_image4, :reference
+    base.attribute :tc_image_alt, :reference
 
     # For type app
     base.attribute :tc_app_name_iphone, :string
@@ -34,11 +29,5 @@ module TwitterCardsExtender
     base.attribute :tc_player_height, :string
     base.attribute :tc_player_stream, :string
     base.attribute :tc_player_stream_content_type, :string
-
-    # For type Product
-    base.attribute :tc_product_data1, :string
-    base.attribute :tc_product_label1, :string
-    base.attribute :tc_product_data2, :string
-    base.attribute :tc_product_label2, :string
   end
 end

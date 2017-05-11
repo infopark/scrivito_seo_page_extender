@@ -1,16 +1,16 @@
 <% words = words_density(obj, attribute) %>
 <h4>
-  <%= words[:count] %> good words on this page (words not in stop word list)
+  <%= t('scrivito_seo_page_extender.word_density.good_words', count: words[:count], default: "#{words[:count]} good words on this page (words not in stop word list)") %>
 </h4>
 <ul class='tab-list'>
   <li class='active' data-panel-target='#one-word'>
-    Single Words
+    <%= t('scrivito_seo_page_extender.word_density.single_words', default: 'Single Words') %>
   </li>
   <li data-panel-target='#two-words'>
-    Two word phrases
+    <%= t('scrivito_seo_page_extender.word_density.two_words', default: 'Two word phrases') %>
   </li>
   <li data-panel-target='#three-words'>
-    Three word phrases
+    <%= t('scrivito_seo_page_extender.word_density.three_words', default: 'Three word phrases') %>
   </li>
 </ul>
 <div class='tab-panels'>

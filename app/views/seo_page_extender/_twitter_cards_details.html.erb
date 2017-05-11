@@ -1,33 +1,33 @@
-<%= scrivito_details_for 'Card type' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_card', default: 'Card type') do %>
   <%= scrivito_tag(:div, obj, :tc_card, data: {tab_to_toggle: '#twitter-card-types-tab'}) %>
 <% end %>
 
 <ul class="tab-list" id="twitter-card-types-tab">
-  <%= content_tag :li, 'Base attributes', data: {panel_target: '#edit-twitter-card-general'}%>
-  <%= content_tag :li, 'App attributes', data: {panel_target: '#edit-twitter-card-app', allowed_values: ['app']}%>
-  <%= content_tag :li, 'Player attributes', data: {panel_target: '#edit-twitter-card-player', allowed_values: ['player']}%>
+  <%= content_tag :li, t('scrivito_seo_page_extender.details.twitter_cards_extender.attributes_base', default: 'Base attributes'), data: {panel_target: '#edit-twitter-card-general'}%>
+  <%= content_tag :li, t('scrivito_seo_page_extender.details.twitter_cards_extender.attributes_app', default: 'App attributes'), data: {panel_target: '#edit-twitter-card-app', allowed_values: ['app']}%>
+  <%= content_tag :li, t('scrivito_seo_page_extender.details.twitter_cards_extender.attributes_player', default: 'Player attributes'), data: {panel_target: '#edit-twitter-card-player', allowed_values: ['player']}%>
 </ul>
 
 <div class="tab-panels">
   <div class="tab-panel active" id="edit-twitter-card-general">
     <%= scrivito_details_for do %>
-      <h3>Creator <small>Twitter name of the creator of this page e.g. @gertimon</small></h3>
+      <%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_creator', default: '<h3>Creator <small>Twitter name of the creator of this page e.g. @gertimon</small></h3>').html_safe %>
       <%= scrivito_tag(:div, obj, :tc_creator) %>
     <% end %>
     <%= scrivito_details_for do %>
-      <h3>Site <small>Twitter name of the company e.g. @infopark</small></h3>
+      <%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_site', default: '<h3>Site <small>Twitter name of the company e.g. @infopark</small></h3>').html_safe %>
       <%= scrivito_tag(:div, obj, :tc_site) %>
     <% end %>
 
-    <%= scrivito_details_for 'Title' do %>
+    <%= scrivito_details_for t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_title', default: 'Title') do %>
       <%= scrivito_tag(:div, obj, :tc_title) %>
     <% end %>
 
-    <%= scrivito_details_for 'Description' do %>
+    <%= scrivito_details_for t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_description', default: 'Description') do %>
       <%= scrivito_tag(:div, obj, :tc_description) %>
     <% end %>
 
-    <%= scrivito_details_for 'Image' do %>
+    <%= scrivito_details_for t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_image', default: 'Image') do %>
       <%= scrivito_tag(:div, obj, :tc_image) %>
     <% end %>
   </div>
@@ -36,36 +36,36 @@
     <div class="row">
       <div class="col-xs-4">
         <%= scrivito_details_for 'Iphone' do %>
-          <h4>App Name</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_name', default: 'App Name') %></h4>
           <%= scrivito_tag(:div, obj, :tc_app_name_iphone) %>
-          <h4>Store ID</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_id', default: 'Store ID') %></h4>
           <%= scrivito_tag(:div, obj, :tc_app_id_iphone) %>
-          <h4>Store URL</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_url', default: 'Store URL') %></h4>
           <%= scrivito_tag(:div, obj, :tc_app_url_iphone) %>
         <% end %>
       </div>
       <div class="col-xs-4">
         <%= scrivito_details_for 'Ipad' do %>
-          <h4>App Name</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_name', default: 'App Name') %></h4>
           <%= scrivito_tag(:div, obj, :tc_app_name_ipad) %>
-          <h4>Store ID</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_id', default: 'Store ID') %></h4>
           <%= scrivito_tag(:div, obj, :tc_app_id_ipad) %>
-          <h4>Store URL</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_url', default: 'Store URL') %></h4>
           <%= scrivito_tag(:div, obj, :tc_app_url_ipad) %>
         <% end %>
       </div>
       <div class="col-xs-4">
         <%= scrivito_details_for 'Googleplay' do %>
-          <h4>App Name</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_name', default: 'App Name') %></h4>
           <%= scrivito_tag(:div, obj, :tc_app_name_googleplay) %>
-          <h4>Store ID</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_id', default: 'Store ID') %></h4>
           <%= scrivito_tag(:div, obj, :tc_app_id_googleplay) %>
-          <h4>Store URL</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_url', default: 'Store URL') %></h4>
           <%= scrivito_tag(:div, obj, :tc_app_url_googleplay) %>
         <% end %>
       </div>
     </div>
-    <%= scrivito_details_for 'Country' do %>
+    <%= scrivito_details_for t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_app_country', default: 'Country') do %>
       <%= scrivito_tag(:div, obj, :tc_app_country) %>
     <% end %>
   </div>
@@ -73,23 +73,23 @@
   <div class="tab-panel" id="edit-twitter-card-player">
     <div class="row">
       <div class="col-xs-4">
-        <%= scrivito_details_for 'Player' do %>
+        <%= scrivito_details_for t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_player', default: 'Player') do %>
           <%= scrivito_tag(:div, obj, :tc_player) %>
         <% end %>
       </div>
       <div class="col-xs-4">
-        <%= scrivito_details_for 'Dimension' do %>
-          <h4>Width</h4>
+        <%= scrivito_details_for t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_player_dimension', default: 'Dimension') do %>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_player_width', default: 'Width') %></h4>
           <%= scrivito_tag(:div, obj, :tc_player_width) %>
-          <h4>Height</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_player_height', default: 'Height') %></h4>
           <%= scrivito_tag(:div, obj, :tc_player_height) %>
         <% end %>
       </div>
       <div class="col-xs-4">
         <%= scrivito_details_for do %>
-          <h4>Stream</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_player_stream', default: 'Stream') %></h4>
           <%= scrivito_tag(:div, obj, :tc_player_stream) %>
-          <h4>Content Type</h4>
+          <h4><%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_player_stream_content_type', default: 'Content Type') %></h4>
           <%= scrivito_tag(:div, obj, :tc_player_stream_content_type) %>
         <% end %>
       </div>
@@ -98,5 +98,7 @@
 </div>
 
 <div class="alert alert-info">
-  <a href="https://dev.twitter.com/cards/getting-started" target="_blank">More about Twitter cards</a>.
+  <a href="https://dev.twitter.com/cards/getting-started" target="_blank">
+    <%= t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_more_about', default: 'More about Twitter cards') %>
+  </a>.
 </div>

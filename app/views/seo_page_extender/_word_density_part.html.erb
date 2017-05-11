@@ -1,9 +1,9 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Word</th>
-      <th>Count</th>
-      <th>Density</th>
+      <th><%= t('scrivito_seo_page_extender.word_density.word', default: 'Word') %></th>
+      <th><%= t('scrivito_seo_page_extender.word_density.count', default: 'Count') %></th>
+      <th><%= t('scrivito_seo_page_extender.word_density.density', default: 'Density') %></th>
     </tr>
   </thead>
   <% list.each do |word, count| %>

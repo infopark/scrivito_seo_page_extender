@@ -1,42 +1,42 @@
-<%= scrivito_details_for 'Keywords' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_keywords', default: 'Keywords') do %>
   <%= scrivito_tag(:div, obj, :meta_keywords) %>
 <% end %>
 
-<%= scrivito_details_for 'Description' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_description', default: 'Description') do %>
   <%= scrivito_tag(:div, obj, :meta_description) %>
 <% end %>
 
-<%= scrivito_details_for 'Copyright' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_copyright', default: 'Copyright') do %>
   <%= scrivito_tag(:div, obj, :meta_copyright) %>
 <% end %>
 
-<%= scrivito_details_for 'Author' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_author', default: 'Author') do %>
   <%= scrivito_tag(:div, obj, :meta_author) %>
 <% end %>
 
-<%= scrivito_details_for 'Publisher' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_publisher', default: 'Publisher') do %>
   <%= scrivito_tag(:div, obj, :meta_publisher) %>
 <% end %>
 
-<%= scrivito_details_for 'Type' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_page_type', default: 'Type') do %>
   <%= scrivito_tag(:div, obj, :meta_page_type) %>
 <% end %>
 
-<%= scrivito_details_for 'Topic' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_page_topic', default: 'Topic') do %>
   <%= scrivito_tag(:div, obj, :meta_page_topic) %>
 <% end %>
 
-<%= scrivito_details_for 'Audience' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_audience', default: 'Audience') do %>
   <%= scrivito_tag(:div, obj, :meta_audience) %>
 <% end %>
 
-<%= scrivito_details_for 'Robots<small><a href="https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag" target="_blank">?</a></small>'.html_safe do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_robots', default: 'Robots<small><a href="https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag" target="_blank">?</a></small>').html_safe do %>
   <%= scrivito_tag(:div, obj, :meta_robots) %>
 <% end %>
 
-<%= scrivito_details_for 'Canonical Link' do %>
+<%= scrivito_details_for t('scrivito_seo_page_extender.details.meta_data_extender.meta_canonical', default: 'Canonical Link') do %>
   <%= scrivito_tag(:div, obj, :meta_canonical) %>
   <div class="text-info">
-    Using <strong><%= canonical_link(@obj) %></strong> as default.
+    <%= t('scrivito_seo_page_extender.details.meta_data_extender.default_canonical_link', link: canonical_link(@obj), default: "Using <strong>#{canonical_link(@obj)}</strong> as default.").html_safe %>
   </div>
 <% end %>

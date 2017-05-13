@@ -5,7 +5,7 @@ module OpenGraphExtender
     base.attribute :og_locale,               :string
     base.attribute :og_locale_alternate,     :stringlist
     base.attribute :og_title,                :string
-    base.attribute :og_type,                 :enum, values: ['website', 'article', 'book', 'profile', 'music.song', 'music.album', 'music.playlist', 'music.radiostation', 'video.movie', 'video.episode', 'video.tv_show', 'video.other']
+    base.attribute :og_type,                 :enum, values: ['website', 'article', 'blog', 'book', 'profile', 'music.song', 'music.album', 'music.playlist', 'music.radiostation', 'video.movie', 'video.episode', 'video.tv_show', 'video.other']
 
     base.attribute :og_audio,                :reference
     base.attribute :og_image,                :reference

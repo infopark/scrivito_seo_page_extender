@@ -9,7 +9,7 @@ module TwitterCardsExtender
 
     # Image and Gallery
     base.attribute :tc_image,                      :reference
-    base.attribute :tc_image_alt,                  :reference
+    base.attribute :tc_image_alt,                  :string
 
     # For type app
     base.attribute :tc_app_country,                :string

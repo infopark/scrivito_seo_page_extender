@@ -30,6 +30,10 @@
     <%= scrivito_details_for t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_image', default: 'Image') do %>
       <%= scrivito_tag(:div, obj, :tc_image) %>
     <% end %>
+
+    <%= scrivito_details_for t('scrivito_seo_page_extender.details.twitter_cards_extender.tc_image_alt', default: 'Image Description') do %>
+      <%= scrivito_tag(:div, obj, :tc_image_alt) %>
+    <% end %>
   </div>
 
   <div class="tab-panel" id="edit-twitter-card-app">

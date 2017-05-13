@@ -252,6 +252,7 @@ en:
         tc_creator: '<h3>Creator <small>Twitter name of the creator of this page e.g. @gertimon</small></h3>'
         tc_description: 'Description'
         tc_image: 'Image'
+        tc_image_alt: 'Image Description'
         tc_more_about: 'More about Twitter cards'
         tc_player_dimension: 'Dimension'
         tc_player_height: 'Height'

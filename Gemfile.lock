@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    scrivito_seo_page_extender (1.2.2)
+    scrivito_seo_page_extender (1.2.3)
       scrivito_sdk
 
 GEM
@@ -79,7 +79,7 @@ GEM
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     public_suffix (2.0.5)
-    rack (2.0.2)
+    rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.2)
@@ -106,7 +106,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
-    scrivito_sdk (1.8.1)
+    scrivito_sdk (1.9.1)
       addressable (~> 2.3)
       connection_pool (~> 2.2)
       diff-lcs (~> 1.2)

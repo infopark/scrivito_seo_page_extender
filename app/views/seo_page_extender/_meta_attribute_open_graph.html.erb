@@ -1,10 +1,12 @@
-<% if @obj.respond_to?(attribute) && seo_attribute_fallback(@obj, attribute.to_sym).present? %>
+<% fallback = seo_attribute_fallback(@obj, attribute.to_sym) %>
+
+<% if @obj.respond_to?(attribute) && fallback.present? %>
   <% if attribute == 'og_image' %>
-    <meta content="<%= scrivito_path(@obj[attribute]) %>" property="<%= name %>"/>
-    <meta content="<%= @obj.image_type %>" property="og:image:type"/>
-    <meta content="<%= @obj.image_width %>" property="og:image:width"/>
-    <meta content="<%= @obj.image_height %>" property="og:image:height"/>
+    <meta content="<%= scrivito_url(fallback) %>" property="<%= name %>"/>
+    <meta content="<%= image_type(fallback) %>" property="og:image:type"/>
+    <meta content="<%= image_width(fallback) %>" property="og:image:width"/>
+    <meta content="<%= image_height(fallback) %>" property="og:image:height"/>
   <% else %>
-    <meta content="<%= seo_attribute_fallback(@obj, attribute.to_sym) %>" property="<%= name %>"/>
+    <meta content="<%= fallback %>" property="<%= name %>"/>
   <% end %>
 <% end %>

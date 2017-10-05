@@ -26,6 +26,18 @@ module SeoPageExtenderHelper
     end
   end
 
+  def image_width(obj)
+    obj.meta_data[:width]
+  end
+
+  def image_height(obj)
+    obj.meta_data[:height]
+  end
+
+  def image_type(obj)
+    obj.binary_content_type
+  end
+
   private
   def seo_attribute_fallback?(obj, attribute)
     # config is true && attribute is not set && mapping exists

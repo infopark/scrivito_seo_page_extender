@@ -1,9 +1,11 @@
-<% if @obj.respond_to?(attribute) && seo_attribute_fallback(@obj, attribute.to_sym).present? %>
+<% fallback = seo_attribute_fallback(@obj, attribute.to_sym) %>
+
+<% if @obj.respond_to?(attribute) && fallback.present? %>
   <% if name[/image\d?$/] %>
-    <meta content="<%= scrivito_path(@obj[attribute]) %>" name="<%= name %>"/>
+    <meta content="<%= scrivito_url(fallback) %>" name="<%= name %>"/>
   <% elsif name == 'audience' || name == 'robots' || name == 'keywords' %>
     <meta content="<%= @obj.send(attribute).join(',') %>" name="<%= name %>"/>
   <% else %>
-    <meta content="<%= seo_attribute_fallback(@obj, attribute.to_sym) %>" name="<%= name %>"/>
+    <meta content="<%= fallback %>" name="<%= name %>"/>
   <% end %>
 <% end %>

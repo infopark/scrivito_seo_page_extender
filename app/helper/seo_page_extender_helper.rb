@@ -19,6 +19,7 @@ module SeoPageExtenderHelper
   end
 
   def seo_attribute_fallback(obj, attribute)
+    return unless obj.respond_to?(attribute)
     if seo_attribute_fallback?(obj, attribute)
       seo_attribute_mapping(obj)[attribute]
     else
@@ -40,8 +41,10 @@ module SeoPageExtenderHelper
 
   private
   def seo_attribute_fallback?(obj, attribute)
-    # mapping is active && attribute is not set && a mapping exists
-    ScrivitoSeoPageExtender.configuration.attribute_mapping && !obj.send(attribute.to_sym).present? && (seo_attribute_mapping(obj)[attribute]).present?
+    # mapping is active && attribute is included to obj
+    if ScrivitoSeoPageExtender.configuration.attribute_mapping && obj.respond_to?(attribute)
+      !obj.send(attribute.to_sym).present? && (seo_attribute_mapping(obj)[attribute]).present?
+    end
   end
 
   def get_words_from_page(obj, attribute)

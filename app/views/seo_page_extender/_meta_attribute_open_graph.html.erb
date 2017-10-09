@@ -3,9 +3,15 @@
 <% if @obj.respond_to?(attribute) && fallback.present? %>
   <% if attribute == 'og_image' %>
     <meta content="<%= scrivito_url(fallback) %>" property="<%= name %>"/>
-    <meta content="<%= image_type(fallback) %>" property="og:image:type"/>
+    <meta content="<%= fallback.binary_content_type %>" property="og:image:type"/>
     <meta content="<%= image_width(fallback) %>" property="og:image:width"/>
     <meta content="<%= image_height(fallback) %>" property="og:image:height"/>
+  <% elsif attribute == 'og_video' %>
+    <meta content="<%= scrivito_url(fallback) %>" property="<%= name %>"/>
+    <meta content="<%= fallback.binary_content_type %>" property="og:video:type"/>
+  <% elsif attribute == 'og_audio' %>
+    <meta content="<%= scrivito_url(fallback) %>" property="<%= name %>"/>
+    <meta content="<%= fallback.binary_content_type %>" property="og:audio:type"/>
   <% else %>
     <meta content="<%= fallback %>" property="<%= name %>"/>
   <% end %>

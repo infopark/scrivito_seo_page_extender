@@ -35,10 +35,6 @@ module SeoPageExtenderHelper
     obj.meta_data[:height]
   end
 
-  def image_type(obj)
-    obj.binary_content_type
-  end
-
   private
   def seo_attribute_fallback?(obj, attribute)
     # mapping is active && attribute is included to obj

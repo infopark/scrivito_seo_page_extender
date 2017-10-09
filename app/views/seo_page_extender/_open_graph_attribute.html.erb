@@ -1,7 +1,7 @@
-<% if @obj.respond_to?(attribute) && !@obj.send(attribute).blank? %>
+<% if @obj.respond_to?(attribute) && seo_attribute_fallback(@obj, attribute).present? %>
   <% if name[/image\d?$/] %>
-    <meta content="<%= scrivito_path(@obj[attribute]) %>" name="<%= name %>"/>
+    <meta content="<%= scrivito_path(seo_attribute_fallback(@obj, attribute)) %>" name="<%= name %>"/>
   <% else %>
-    <meta content="<%= @obj.send(attribute).tr("\u00a0", ' ').strip %>" property="<%= name %>"/>
+    <meta content="<%= seo_attribute_fallback(@obj, attribute).tr("\u00a0", ' ').strip %>" property="<%= name %>"/>
   <% end %>
 <% end %>

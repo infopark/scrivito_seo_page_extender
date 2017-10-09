@@ -1,5 +1,5 @@
-<% if @obj.respond_to?(attribute) && !@obj.send(attribute).blank? %>
-  <% @obj[attribute].each do |obj| %>
+<% if @obj.respond_to?(attribute) && seo_attribute_fallback(@obj, attribute).present? %>
+  <% seo_attribute_fallback(@obj, attribute).each do |obj| %>
     <% if !obj.is_a? String %>
       <meta content="<%= scrivito_path(obj) %>" property="<%= name %>"/>
       <% if obj.is_a? Image %>

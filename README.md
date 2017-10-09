@@ -164,6 +164,7 @@ def self.seo_attribute_mapping(obj)
   {
     og_title: obj.my_app_title,
     og_description: obj.my_app_description
+    og_image: Obj.where(:title, :equals, 'Logo').first
     ...
   }
 end
@@ -269,5 +270,4 @@ en:
       three_words: 'Three word phrases'
       two_words: 'Two word phrases'
       word: 'Word'
-
 ```

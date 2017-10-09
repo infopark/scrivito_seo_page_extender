@@ -40,7 +40,7 @@ module SeoPageExtenderHelper
 
   private
   def seo_attribute_fallback?(obj, attribute)
-    # config is true && attribute is not set && mapping exists
+    # mapping is active && attribute is not set && a mapping exists
     ScrivitoSeoPageExtender.configuration.attribute_mapping && !obj.send(attribute.to_sym).present? && (seo_attribute_mapping(obj)[attribute]).present?
   end
 

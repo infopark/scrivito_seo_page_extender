@@ -4,7 +4,7 @@
   <% if name[/image\d?$/] %>
     <meta content="<%= scrivito_url(fallback) %>" name="<%= name %>"/>
   <% elsif name == 'audience' || name == 'robots' || name == 'keywords' %>
-    <meta content="<%= @obj.send(attribute).join(',') %>" name="<%= name %>"/>
+    <meta content="<%= seo_attribute_fallback(@obj, attribute).join(',') %>" name="<%= name %>"/>
   <% else %>
     <meta content="<%= fallback %>" name="<%= name %>"/>
   <% end %>

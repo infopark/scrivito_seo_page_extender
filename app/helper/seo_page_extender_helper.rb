@@ -76,7 +76,8 @@ module SeoPageExtenderHelper
   end
 
   def seo_attribute_mapping(obj)
-    return Obj.seo_attribute_mapping(obj) if Obj.respond_to?('seo_attribute_mapping')
+    return obj.seo_attribute_mapping(obj) if obj.respond_to?('seo_attribute_mapping')
+    return Obj.seo_attribute_mapping(obj) if Obj.respond_to?('seo_attribute_mapping') # deprecated
     {
       og_title: obj.send(:title).presence,
       og_description: obj.send(:meta_description).presence,

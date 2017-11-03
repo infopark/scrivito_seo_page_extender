@@ -157,15 +157,14 @@ ScrivitoSeoPageExtender.configure do |config|
 end
 ```
 
-You can overwrite the default attribute mapping depending on your app in the obj.rb with:
+You can overwrite the default attribute mapping depending on your app in the obj.rb or define it on any obj class for diffenrent data sets:
 
 ```ruby
-def self.seo_attribute_mapping(obj)
+def seo_attribute_mapping(obj)
   {
-    og_title: obj.my_app_title,
-    og_description: obj.my_app_description
-    og_image: Obj.where(:title, :equals, 'Logo').first
-    ...
+    og_title: obj.my_title,
+    og_description: obj.my_description,
+    og_image: obj.my_image
   }
 end
 ```

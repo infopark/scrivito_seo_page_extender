@@ -123,13 +123,27 @@ The word density plugin lowercases your content. Therefore, the words in your st
 
 ### Google analytics
 
-The partial that adds the standard implemetation of Google Analytics to your view can be rendered like this:
+The partial, that adds the asnychronous implemetation of Google Analytics to your view, can be rendered like this:
 
 ```xml
 <%= render 'seo_page_extender/google_analytics', key: 'your-googleAnalytics-key' %>
 ```
 
 `anonymize-ip` has been set to `true` in this script.
+
+The partial also brings in the function to set a opt-out cookie. You can then place a link on your page, which the visitor can use to set this cookie.
+
+Use it with a simple link:
+
+```xml
+<%= link_to 'javascript:gaOptout()', 'Deactivate Google Analytics' %>
+```
+
+Create an additional alert window in the browser:
+
+```xml
+<%= link_to 'javascript:gaOptout()', 'Deactivate Google Analytics', onclick: "alert('Google Analytics has been deactivated.')" %>
+```
 
 ### Canonical link
 

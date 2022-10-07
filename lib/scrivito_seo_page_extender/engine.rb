@@ -3,7 +3,9 @@ module ScrivitoSeoPageExtender
     isolate_namespace ScrivitoSeoPageExtender
 
     initializer "seo_page_extender:seo_page_extender_helper" do
-      ActionView::Base.send :include, SeoPageExtenderHelper
+      config.after_initialize do
+        ActionView::Base.send :include, SeoPageExtenderHelper
+      end
     end
   end
 end
